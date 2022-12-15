@@ -168,7 +168,7 @@ for i in range(len(iterations)):
     request_completion_times.append(req_complete_time)
     server_utils.append(avg_server_util)
 
-# For Routing Decision 2 algorithm
+# print alg2 results
 graph_queue_wait_times = []
 graph_request_complete_times = []
 graph_server_utils = []
