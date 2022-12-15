@@ -71,12 +71,12 @@ def ciwNetwork(runtime, algorithm, iters, seed):
 
             sorted_nodes = dict(sorted(fast_servers_first.items(), key=lambda reqs: reqs[1]))
 
-            if list(sorted_nodes.keys())[0] > 6:  # if a fast server is first (always return it)
+            if list(sorted_nodes.keys())[0] > SLOW_NODES:  # if a fast server is first (always return it)
                 return self.simulation.nodes[list(sorted_nodes.keys())[0]]  # return this node
 
             else:
                 for i in range(0, 10):
-                    if list(sorted_nodes.keys())[i] > 6:  # if we have a fast server
+                    if list(sorted_nodes.keys())[i] > SLOW_NODES:  # if we have a fast server
                         if list(sorted_nodes.values())[i] - iters > list(sorted_nodes.values())[0]: 
                             return self.simulation.nodes[list(sorted_nodes.keys())[i]] # return fast server
                         else:
